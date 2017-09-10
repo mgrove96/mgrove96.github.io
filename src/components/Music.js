@@ -25,7 +25,6 @@ const getTopTracks = async (token, artistName) => {
         }
       })
     const artistID = artist.data.artists.items[0].id;
-    console.log(artistID);
     const tracks = await axios.get('https://api.spotify.com/v1/artists/'+artistID+'/top-tracks', {
         headers: {
         'Authorization': 'Bearer ' + token
@@ -51,7 +50,8 @@ export default class Music extends React.Component {
 
     this.state = {
       artistName: "",
-      tracks: []
+      tracks: [],
+      videoID: ""
     }
   }
 
@@ -66,6 +66,10 @@ export default class Music extends React.Component {
 
   setTracksState(tracks) {
     this.setState({tracks: tracks});
+  }
+
+  setVideoIdState(videoID) {
+    this.setState({videoID: videoID});
   }
 
   artistSearch(e) {
@@ -91,10 +95,24 @@ export default class Music extends React.Component {
   }
 
   handleTrackClick(query) {
-    console.log(query);
+    axios.get('https://www.googleapis.com/youtube/v3/search', {
+      params: {
+        q: query,
+        key: 'AIzaSyAmG1e0vpUuQOzRNPzKvqEczzyIm6ZE_WY',
+        part: 'snippet'
+      }
+    }).then(response => this.setVideoIdState(response.data.items[0].id.videoId));
   }
 
   render() {
+    let youtubePlayer;
+    const vid = this.state.videoID;
+    console.log(vid);
+    if (vid !== "") {
+      youtubePlayer = <iframe width='560' height='315' src={`https://www.youtube.com/embed/${vid}`} frameBorder='0' allowFullScreen></iframe>
+    } else {
+      youtubePlayer = <div></div>
+    }
     let content = [];
     const tracks = this.state.tracks;
     for (let [i, track] of tracks.entries()) {
@@ -107,14 +125,14 @@ export default class Music extends React.Component {
           onClick={query => this.handleTrackClick(trackArtist + " " + trackName)}
           key={i}
           style={
-            {background: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${imageURL}) top center / 6rem 6rem no-repeat`}
+            {background: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${imageURL}) top center / 7rem 7rem no-repeat`}
           }>
           <span>{trackName}</span>
         </div>);
     }
     return (
       <div className="musicView">
-        <div className="container-1">
+        <div className="search">
           <form onSubmit={e => this.artistSearch(e)}>
             <span className="icon"><i className="fa fa-search" aria-hidden="true"></i></span>
             <input type="text" id="searchVal" placeholder="Search for an artist..."
@@ -122,8 +140,13 @@ export default class Music extends React.Component {
             />
           </form>
         </div>
-        <div className="topTracks">
-          {content}
+        <div className="contentViewer">
+          <div className="topTracks">
+            {content}
+          </div>
+          <div className="youtubePlayer">
+            {youtubePlayer}
+          </div>
         </div>
       </div>
     );

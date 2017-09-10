@@ -13,7 +13,7 @@
   flex-direction: column;
   background-color: #3A539B;
 
-  .container-1 {
+  .search {
     width: 100%;
     height: 5rem;
     display: flex;
@@ -46,27 +46,39 @@
     }
   }
 
-  .topTracks {
+  .contentViewer {
     position: relative;
-    top: 4rem;
-    right: 20rem;
+    top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+
+    .topTracks {
+    position: relative;
     width: 14rem;
     display: flex;
     flex-wrap: wrap;
 
-    .track {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      width: 6rem;
-      height: 6rem;
-      span {
-        color: white;
-      }
-      &:hover {
-        transform: scale(1.1);
+      .track {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        width: 7rem;
+        height: 7rem;
+        span {
+          color: white;
+        }
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
+
+    .youtubePlayer {
+      width: 35rem;
+    }
+
   }
 }
