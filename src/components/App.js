@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
-import Landing from './Landing';
+import { Switch, Route } from 'react-router-dom'
 import '../stylesheets/App.scss';
+import Landing from './Landing';
+import Music from './Music';
+import Games from './Games';
 
 class App extends Component {
   constructor(props) {
     super(props)
-
-    this.state = {
-      view: 0
-    }
   }
   render() {
     return (
-      <div>
-        <Landing>
-        </Landing>
-      </div>
+      <Switch>
+        <Route exact path='/' component={Landing}/>
+        <Route path='/music' component={Music}/>
+        <Route path='/games' component={Games}/>
+      </Switch>
     );
   }
 }
