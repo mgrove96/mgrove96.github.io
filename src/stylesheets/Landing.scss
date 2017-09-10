@@ -1,0 +1,59 @@
+.view {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #1BBC9B;
+  
+  .landingContainer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: flex-end;
+  align-content: flex-end;
+
+  .landingTitle {
+    margin: 0;
+    font-size: 6rem;
+    color: #FFF;
+    #contactLink {
+      &:hover {
+        cursor: pointer;
+        color: #000;
+      }
+    }
+  }
+
+  .landingScrollLinks {
+    font-size: 1.5rem;
+    color: white;
+    #webDevLink {
+      &:hover {
+        cursor: pointer;
+        color: #3A539B;
+      }
+    }
+    #pmLink {
+      margin: 0 1rem;
+      &:hover {
+        cursor: pointer;
+        color: #81CFE0;
+      }
+    }
+    #langLink {
+      &:hover {
+        cursor: pointer;
+        color: #F64747;
+      }
+    }
+
+  }
+}
+}
