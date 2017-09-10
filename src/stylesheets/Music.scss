@@ -1,0 +1,72 @@
+@mixin placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+.musicView {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #3A539B;
+
+  .container-1 {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+
+    .icon{
+      color: white;
+      position: relative;
+      top: 2.9rem;
+      right: 21rem;
+    }
+
+    input#searchVal {
+      width: 19rem;
+      height: 3rem;
+      margin-top: 2rem;
+      background: #040814;
+      border: none;
+      font-size: 10pt;
+      float: left;
+      color: #fff;
+      padding-left: 45px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+
+      @include placeholder {
+        color: white;
+      }
+    }
+  }
+
+  .topTracks {
+    position: relative;
+    top: 4rem;
+    right: 20rem;
+    width: 14rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    .track {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      width: 6rem;
+      height: 6rem;
+      span {
+        color: white;
+      }
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

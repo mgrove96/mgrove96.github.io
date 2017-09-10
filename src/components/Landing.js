@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import '../stylesheets/Landing.scss';
 
 export default class Landing extends React.Component {
   constructor(props) {
