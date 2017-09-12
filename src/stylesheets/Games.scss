@@ -1,0 +1,87 @@
+#gamesToHomeLink {
+  position: absolute;
+  right: 1.5rem;
+  top: 0.5rem;
+  color: white;
+  &:hover {
+    cursor: pointer;
+    color: #1BBC9B
+  }
+}
+
+.gamesView.hot {
+  background-color: #F64747;
+}
+
+.gamesView.cold {
+  background-color: #81CFE0;
+}
+
+.gamesView {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-transition: background-color 2s, -webkit-transform 2s;
+  transition: background-color 2s, transform 2s;
+
+  .gamesTitle {
+    color: white;
+    font-size: 2.5rem;
+  }
+
+  .gameArea {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+  }
+}
+
+#howToPlayLink {
+  position: absolute;
+  left: 1.5rem;
+  top: 0.5rem;
+  color: white;
+  &:hover {
+    cursor: pointer;
+    color: #3A539B;
+  }
+}
+
+.howToPlayTitle {
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+.howToPlayList {
+  font-size: 1.5rem;
+  li {
+    margin: 2rem;
+  }
+  .hotText {
+    color: #F64747;
+  }
+  .coldText {
+    color: #81CFE0;
+  }
+}
+
+.exitHowToPlay {
+  position: relative;
+  font-size: 1.5rem;
+  color: white;
+  margin: 0;
+  background: transparent;
+  bottom: 1.5rem;
+  padding: 5px 20px 10px 20px;
+  border: 0.1rem solid white;
+  border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+    color: #F64747;
+    border: 0.1rem solid #F64747;
+  }
+}

@@ -1,0 +1,25 @@
+.modal {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #3A539B;
+  border-radius: 1rem;
+  width: 30rem;
+  height: 30rem;
+  color: white;
+  z-index: 9999;
+}
+
+.modalBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.1);
+}

@@ -29,7 +29,7 @@ export default class Landing extends React.Component {
           <span id="musicLink" onClick={() => { history.push('/music') }}>music.</span>
         )} />
         <Route render={({ history}) => (
-          <span id="gamesLink" onClick={() => { history.push('/games') }}>games.</span>
+          <span id="gamesLink" onClick={() => { history.push('/hotcold') }}>games.</span>
         )} />
           <span id="socialLink"><a href="http://sunlitgrove.com/" target="_blank">social.</a></span>
        </div>

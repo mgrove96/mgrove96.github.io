@@ -4,14 +4,14 @@ import { Route } from 'react-router-dom'
 import axios from 'axios';
 
 const getHashParams = () => {
-          var hashParams = {};
-          var e, r = /([^&;=]+)=?([^&;]*)/g,
-              q = window.location.hash.substring(1);
-          while ( e = r.exec(q)) {
-             hashParams[e[1]] = decodeURIComponent(e[2]);
-          }
-          return hashParams;
-        }
+  let hashParams = {};
+  let e, r = /([^&;=]+)=?([^&;]*)/g,
+      q = window.location.hash.substring(1);
+  while ( e = r.exec(q)) {
+     hashParams[e[1]] = decodeURIComponent(e[2]);
+  }
+  return hashParams;
+}
 
 const getTopTracks = async (token, artistName) => {
   let returnTracks = [];
@@ -78,7 +78,7 @@ export default class Music extends React.Component {
     const artist = this.state.artistName
     console.log(artist);
     const client_id = '7f704c94d85f4b3ab799467aa94a1a7b'; // Your client id
-    const redirect_uri = 'http://localhost:3000/music/callback'; // Your redirect uri
+    const redirect_uri = 'https://mgrove96.github.io/music'; // Your redirect uri
     const scope = 'user-read-private user-read-email';
     const state = this.state.artistName;
     let url = 'https://accounts.spotify.com/authorize';
@@ -114,6 +114,7 @@ export default class Music extends React.Component {
     } else {
       youtubePlayer = <div></div>
     }
+
     let content = [];
     const tracks = this.state.tracks;
     for (let [i, track] of tracks.entries()) {
@@ -131,6 +132,7 @@ export default class Music extends React.Component {
           <span>{trackName}</span>
         </div>);
     }
+
     return (
       <div>
         <Route render={({ history}) => (
