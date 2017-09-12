@@ -4,17 +4,16 @@ import '../stylesheets/App.scss';
 import Landing from './Landing';
 import Music from './Music';
 import Games from './Games';
+import Contact from './Contact';
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-  }
   render() {
     return (
       <Switch>
         <Route exact path='/' component={Landing}/>
         <Route path='/music' component={Music}/>
         <Route path='/games' component={Games}/>
+        <Route path='/contact' component={Contact}/>
       </Switch>
     );
   }

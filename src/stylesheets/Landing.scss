@@ -26,32 +26,52 @@
       #contactLink {
         &:hover {
           cursor: pointer;
-          color: #000;
+          color: #2C3E50;
         }
       }
     }
 
     .landingScrollLinks {
-      font-size: 1.5rem;
+      font-size: 2rem;
       color: white;
-      #homeLink {
+      #musicLink {
         &:hover {
           cursor: pointer;
           color: #3A539B;
         }
       }
-      #musicLink {
+      #gamesLink {
         margin: 0 1rem;
+        &:hover {
+          cursor: pointer;
+          color: #F64747;
+        }
+      }
+      #socialLink {
+        a {
+          color: inherit;
+          text-decoration: inherit;
+        }
         &:hover {
           cursor: pointer;
           color: #81CFE0;
         }
       }
-      #gamesLink {
-        &:hover {
-          cursor: pointer;
-          color: #F64747;
-        }
+    }
+    .showPortfolioButton {
+      -webkit-border-radius: 28;
+      -moz-border-radius: 28;
+      border-radius: 28px;
+      font-family: Arial;
+      color: white;
+      font-size: 20px;
+      background: transparent;
+      padding: 10px 20px 10px 20px;
+      border: solid white 2px;
+      text-decoration: none;
+      &:hover {
+        color: #1BBC9B;
+        background-color: white;
       }
     }
   }

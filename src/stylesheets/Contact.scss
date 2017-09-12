@@ -1,0 +1,39 @@
+#contactToHomeLink {
+  position: absolute;
+  right: 1.5rem;
+  top: 0.5rem;
+  color: white;
+  &:hover {
+    cursor: pointer;
+    color: #1BBC9B
+  }
+}
+
+.contactView {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #2C3E50;
+
+  .contactTitle {
+    color: white;
+    font-size: 2.5rem;
+  }
+  .contactIconsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 60vh;
+    .contactIcon {
+      color: white;
+      font-size: 15rem;
+      &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+    }
+  }
+}

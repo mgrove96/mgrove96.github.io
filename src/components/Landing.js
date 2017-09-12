@@ -20,27 +20,29 @@ export default class Landing extends React.Component {
     const portfolio = this.state.portfolio;
     let content;
     if (!portfolio) {
-      content = <button onClick={() => this.handlePortfolioClick()}>Portfolio</button>
+      content = <button className="showPortfolioButton" onClick={() => this.handlePortfolioClick()}>apps i've made</button>
     } 
     else {
       content = (
       <div className="landingScrollLinks">
         <Route render={({ history}) => (
-          <span id="homeLink" onClick={() => { history.push('/') }}>Home</span>
+          <span id="musicLink" onClick={() => { history.push('/music') }}>music.</span>
         )} />
         <Route render={({ history}) => (
-          <span id="musicLink" onClick={() => { history.push('/music') }}>Music</span>
+          <span id="gamesLink" onClick={() => { history.push('/games') }}>games.</span>
         )} />
-        <Route render={({ history}) => (
-          <span id="gamesLink" onClick={() => { history.push('/games') }}>Games</span>
-        )} />
+          <span id="socialLink"><a href="http://sunlitgrove.com/" target="_blank">social.</a></span>
        </div>
       );
     }
     return (
        <div className="view">
           <div className="landingContainer">
-              <h1 className="landingTitle">hi, I'm<span id="contactLink"> mitch.</span></h1>
+              <h1 className="landingTitle">hi, i'm
+                <Route render={({ history}) => (
+                  <span id="contactLink" onClick={() => { history.push('/contact') }}> mitch.</span>
+                )} />
+              </h1>
               {content}
             </div>
         </div>

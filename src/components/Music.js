@@ -1,5 +1,6 @@
 import React from 'react';
 import '../stylesheets/Music.scss';
+import { Route } from 'react-router-dom'
 import axios from 'axios';
 
 const getHashParams = () => {
@@ -131,21 +132,26 @@ export default class Music extends React.Component {
         </div>);
     }
     return (
-      <div className="musicView">
-        <div className="search">
-          <form onSubmit={e => this.artistSearch(e)}>
-            <span className="icon"><i className="fa fa-search" aria-hidden="true"></i></span>
-            <input type="text" id="searchVal" placeholder="Search for an artist..."
-              onChange={e => this.handleUserInput(e)}
-            />
-          </form>
-        </div>
-        <div className="contentViewer">
-          <div className="topTracks">
-            {content}
+      <div>
+        <Route render={({ history}) => (
+          <span id="musicToHomeLink" onClick={() => { history.push('/') }}>home</span>
+        )} />
+        <div className="musicView">
+          <div className="search">
+            <form onSubmit={e => this.artistSearch(e)}>
+              <span className="icon"><i className="fa fa-search" aria-hidden="true"></i></span>
+              <input type="text" id="searchVal" placeholder="search for an artist..."
+                onChange={e => this.handleUserInput(e)}
+              />
+            </form>
           </div>
-          <div className="youtubePlayer">
-            {youtubePlayer}
+          <div className="contentViewer">
+            <div className="topTracks">
+              {content}
+            </div>
+            <div className="youtubePlayer">
+              {youtubePlayer}
+            </div>
           </div>
         </div>
       </div>
