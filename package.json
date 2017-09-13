@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "font-awesome": "^4.7.0",
+    "node-sass-chokidar": "0.0.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-fontawesome": "^1.6.1",
@@ -59,7 +60,9 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "build-css": "node-sass-chokidar src/stylesheets -o src/stylesheets/css",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/stylesheets/css --watch --recursive"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -92,6 +95,5 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "homepage": "https://mgrove96.github.io/me"
+  }
 }

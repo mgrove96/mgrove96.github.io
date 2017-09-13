@@ -1,3 +1,9 @@
+@import url('css/App.css');
+@import url('css/Contact.css');
+@import url('css/Games.css');
+@import url('css/Landing.css');
+@import url('css/Modal.css');
+@import url('css/Music.css');
 body {
   font-family: 'Open Sans', sans-serif;
 }
